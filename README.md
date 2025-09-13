@@ -1,51 +1,31 @@
-# Professional Portfolio (Static) — for `calchang1994-port`
+# Professional Portfolio (Static) — for `calchang1994-port` (v2)
 
-A polished, recruiter‑ready portfolio with **light/dark mode**, accessible navigation, and two featured projects.
+Changes in this version:
+- **Projects section stacks vertically** (one card per row)
+- **Renamed To-Do project** from `todo-react` → `todo-app` (links & copy)
+- Clear **CONTACT_EDIT** markers in `index.html` to swap in your email/LinkedIn quickly
 
-## Projects (links wired for your username)
+## Project links (update if needed)
 - **Task Manager (MERN)** — Live: https://task-manager-calchang1994.netlify.app • API: https://task-manager-api-g0uk.onrender.com • Code: https://github.com/calchang1994-port/task-manager
-- **To‑Do List (React)** — Live: https://calchang1994-port.github.io/todo-react/ • Code: https://github.com/calchang1994-port/todo-react
+- **To-Do App (React)** — Live: https://calchang1994-port.github.io/todo-app/ • Code: https://github.com/calchang1994-port/todo-app
 
-> **Resume:** Drop `resume.pdf` in the repo root (next to `index.html`) to automatically show the Resume button on the homepage.
+> **Resume:** Put `resume.pdf` in the repo root to auto-show the Resume button on the homepage.
 
 ---
 
 ## Publish at **https://calchang1994-port.github.io/**
-GitHub serves user sites from a repo named **`calchang1994-port.github.io`**.
-
-### 1) Create the repo
-- GitHub → **New repository** → name it **`calchang1994-port.github.io`** → Public → Create.
-
-### 2) Upload the site files (root)
-Unzip into a clean folder, then:
-
-```bash
-unzip portfolio-pro-site-calchang1994-port.zip -d site
-cd site
-git init
-git add .
-git commit -m "feat: portfolio for calchang1994-port.github.io"
-git branch -M main
-git remote add origin https://github.com/calchang1994-port/calchang1994-port.github.io.git
-git push -u origin main
-```
-
-Or via web: open `calchang1994-port.github.io` → **Add file → Upload files** → drag the **contents** of the zip (not the zip itself) → **Commit**.
-
-### 3) Enable Pages (if needed)
-Settings → **Pages** → Build and deployment → **Source: Deploy from a branch** → Branch: `main` · Folder: `/ (root)` → **Save**.  
-Wait for the **github-pages** deployment (green).
-
-### Optional
-- Add your LinkedIn URL inside `index.html` (`#contact` section).
-- Replace email with your real one.
-- Add `resume.pdf` to enable the Resume button.
+1) Create repo **`calchang1994-port.github.io`** on GitHub (Public).  
+2) Upload contents of the ZIP to the repo **root** (so `index.html` is at `/`).  
+3) Ensure `.nojekyll` is present (included).  
+4) Settings → Pages → Deploy from a branch → `main` + `/ (root)`.
 
 ---
 
-## Common issues
-- **Site not found / 404**: `index.html` isn’t at root, or repo isn’t named `calchang1994-port.github.io` exactly.
-- **Old content**: wait ~1–2 min, hard refresh, check **Deployments → github-pages**.
-- **Broken links**: update `index.html` project URLs if your repo/site names differ.
+## Edit your contact info
+Open `index.html` and look for the `CONTACT_EDIT` block in the Contact section:
+```html
+<p><strong>Email:</strong> <a href="mailto:you@example.com">you@example.com</a></p>
+<p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-link">https://www.linkedin.com/in/your-link</a></p>
+```
 
 © 2025 Calvin Chang
