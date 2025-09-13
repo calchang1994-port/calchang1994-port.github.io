@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Calvin Chang — Portfolio</title>
-  <meta name="description" content="Portfolio of Calvin Chang — full-stack developer focused on React, Node, and MongoDB. Selected work: Task Manager (MERN), To-Do App (React)." />
+  <meta name="description" content="Portfolio of Calvin Chang — full-stack developer focused on React, Node, and MongoDB. Selected work: To-Do App (React), Task Manager (MERN)." />
   <meta name="theme-color" content="#0b1220" />
   <meta property="og:title" content="Calvin Chang — Portfolio" />
-  <meta property="og:description" content="Task Manager (MERN) and To-Do App (React). Light/Dark, fast, recruiter friendly." />
+  <meta property="og:description" content="To-Do App (React) and Task Manager (MERN). Light/Dark, fast, recruiter friendly." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +47,7 @@
             <h2 class="hero-title">Building clean, practical web apps.</h2>
             <p class="hero-lede">
               I focus on product-ready UIs and reliable backends. Below are two projects I’d ship on day one:
-              a full-stack <strong>Task Manager</strong> and a lightweight <strong>To-Do App</strong>.
+              a lightweight <strong>To-Do App</strong> and a full-stack <strong>Task Manager</strong>.
             </p>
             <div class="hero-cta">
               <a class="btn primary" href="#projects">View projects</a>
@@ -74,8 +74,31 @@
             <p class="muted">Two focused builds that show end-to-end execution.</p>
           </div>
 
-          <!-- Vertical layout: one card per row -->
+          <!-- Vertical layout; To-Do App FIRST -->
           <div class="stack-vertical">
+            <!-- To-Do App -->
+            <article class="project card">
+              <div class="project-head">
+                <h3>To-Do App — React Only</h3>
+                <div class="chips">
+                  <span class="chip">React</span><span class="chip">Vite</span><span class="chip">localStorage</span>
+                </div>
+              </div>
+              <p class="muted">
+                Lightweight, client-side to-do app with filters and theme persistence.
+                Runs entirely in the browser—no backend needed.
+              </p>
+              <ul class="bullets">
+                <li>Create/Edit/Delete, All/Active/Completed filters</li>
+                <li>SPA-safe routing, fast initial load</li>
+                <li>Great for quick demos and interviews</li>
+              </ul>
+              <div class="actions">
+                <a class="btn primary" href="https://calchang1994-port.github.io/todo-app/" target="_blank" rel="noopener">Live Demo</a>
+                <a class="btn ghost" href="https://github.com/calchang1994-port/todo-app" target="_blank" rel="noopener">Code</a>
+              </div>
+            </article>
+
             <!-- Task Manager -->
             <article class="project card">
               <div class="project-head">
@@ -97,29 +120,6 @@
                 <a class="btn primary" href="https://task-manager-calchang1994.netlify.app" target="_blank" rel="noopener">Live Demo</a>
                 <a class="btn" href="https://task-manager-api-g0uk.onrender.com" target="_blank" rel="noopener">API</a>
                 <a class="btn ghost" href="https://github.com/calchang1994-port/task-manager" target="_blank" rel="noopener">Code</a>
-              </div>
-            </article>
-
-            <!-- To-Do App -->
-            <article class="project card">
-              <div class="project-head">
-                <h3>To-Do App — React Only</h3>
-                <div class="chips">
-                  <span class="chip">React</span><span class="chip">Vite</span><span class="chip">localStorage</span>
-                </div>
-              </div>
-              <p class="muted">
-                Lightweight, client-side to-do app with filters and theme persistence.
-                Runs entirely in the browser—no backend needed.
-              </p>
-              <ul class="bullets">
-                <li>Create/Edit/Delete, All/Active/Completed filters</li>
-                <li>SPA-safe routing, fast initial load</li>
-                <li>Great for quick demos and interviews</li>
-              </ul>
-              <div class="actions">
-                <a class="btn primary" href="https://calchang1994-port.github.io/todo-app/" target="_blank" rel="noopener">Live Demo</a>
-                <a class="btn ghost" href="https://github.com/calchang1994-port/todo-app" target="_blank" rel="noopener">Code</a>
               </div>
             </article>
           </div>
@@ -165,8 +165,7 @@
             <p class="muted">Open to roles and freelance. I reply quickly.</p>
           </div>
           <div class="contact card">
-            <!-- CONTACT_EDIT: Replace with your real info -->
-            <p><strong>Email:</strong> <a href="mailto:you@example.com">you@example.com</a></p>
+            <p><strong>Email:</strong> <a href="mailto:calchang1994@gmail.com">calchang1994@gmail.com</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/calchang1994-port" target="_blank" rel="noopener">calchang1994-port</a></p>
             <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-link" target="_blank" rel="noopener">https://www.linkedin.com/in/your-link</a></p>
           </div>
@@ -183,7 +182,6 @@
   </div>
 
   <script>
-    // Persisted theme
     (function() {
       const key = "theme";
       const root = document.documentElement;
@@ -198,16 +196,11 @@
         localStorage.setItem(key, mode);
         setLabel();
       };
-      // init
       const saved = localStorage.getItem(key) || "dark";
       apply(saved);
       toggle.checked = saved === "dark";
       toggle.addEventListener("change", (e) => apply(e.target.checked ? "dark" : "light"));
-
-      // Optional: show Resume button only if resume.pdf exists
-      fetch("resume.pdf", { method: "HEAD" }).then(r => {
-        if (r.ok) document.getElementById("resumeBtn").hidden = false;
-      }).catch(() => {});
+      fetch("resume.pdf", { method: "HEAD" }).then(r => { if (r.ok) document.getElementById("resumeBtn").hidden = false; }).catch(() => {});
     })();
   </script>
 </body>
